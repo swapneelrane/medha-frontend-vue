@@ -12,8 +12,8 @@
 import gql from "graphql-tag";
 
 const query = gql`
-  query getStudents {
-    students {
+  query getStudents () {
+    students (sort: "id:asc") {
       id
       first_name
       last_name
