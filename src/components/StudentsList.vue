@@ -1,12 +1,18 @@
 <template>
-  <div></div>
+  <div>
+    <ul>
+      <li v-for="student in students" :key="student.id">
+        Name: {{ student.first_name }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 import gql from "graphql-tag";
 
 const query = gql`
-  query students {
+  query getStudents {
     students {
       id
       first_name
@@ -25,7 +31,8 @@ export default {
   }
 };
 
-console.log(this.apollo.students);
+// console.log(query);
+//console.log(this.$students);
 </script>
 
 <style></style>
