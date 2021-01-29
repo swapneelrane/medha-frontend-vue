@@ -6,7 +6,7 @@ import VueApollo from "vue-apollo";
 import ApolloClient from "apollo-boost";
 
 const apolloClient = new ApolloClient({
-  uri: "34.217.26.87:1337/graphql"
+  uri: "http://34.217.26.87:1337/graphql"
 });
 
 const apolloProvider = new VueApollo({
