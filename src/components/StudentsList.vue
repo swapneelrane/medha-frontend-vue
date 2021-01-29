@@ -1,10 +1,12 @@
-<template> </template>
+<template>
+  <div></div>
+</template>
 
 <script>
 import gql from "graphql-tag";
 
 const query = gql`
-  query {
+  query students {
     students {
       id
       first_name
@@ -17,13 +19,13 @@ const query = gql`
 
 export default {
   apollo: {
-    rockets: {
+    students: {
       query
     }
   }
 };
 
-console.log(query);
+console.log(this.apollo.students);
 </script>
 
 <style></style>
