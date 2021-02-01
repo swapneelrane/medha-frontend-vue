@@ -1,10 +1,18 @@
 <template>
   <div>
-    <ul>
-      <li v-for="student in students" :key="student.id">
-        Name: {{ student.first_name }}
-      </li>
-    </ul>
+    <v-simple-table width="50%">
+      <thead>
+        <tr>
+          <th class="text-left">Student Name</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="student in students" :key="student.id">
+          <td>{{ student.first_name }}</td>
+        </tr>
+      </tbody>
+    </v-simple-table>
   </div>
 </template>
 
