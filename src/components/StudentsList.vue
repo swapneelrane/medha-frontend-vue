@@ -30,9 +30,6 @@ export default {
     }
   }
 };
-
-// console.log(query);
-//console.log(this.$students);
 </script>
 
 <style></style>
