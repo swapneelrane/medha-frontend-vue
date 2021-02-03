@@ -3,7 +3,7 @@
     <v-simple-table width="50%">
       <thead>
         <tr>
-          <th class="text-right">Id</th>
+          <th class="">Id</th>
           <th class="text-left">First Name</th>
           <th class="text-left">Last Name</th>
           <th class="text-left">Email</th>

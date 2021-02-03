@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="Medha logo" src="@/assets/medha-favicon-144x144.png" />
     <HelloWorld msg="Welcome to Your Medha CIS App" />
   </div>
 </template>

@@ -1,15 +1,40 @@
 <template>
-  <div id="app">
+  <!-- App.vue -->
+  <v-app>
+    <!-- Sizes your content based upon application components -->
+    <navigation-drawer />
+    <v-main>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view />
+      </v-container>
+    </v-main>
+
+    <!-- <v-footer app>
+    </v-footer> -->
+  </v-app>
+
+  <!-- <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/students">Students</router-link>
+      
     </div>
     <router-view />
-  </div>
+  </div> -->
 </template>
 
+<script>
+import NavigationDrawer from "@/components/NavigationDrawer";
+
+export default {
+  components: {
+    NavigationDrawer
+  }
+};
+</script>
+
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,5 +53,5 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
