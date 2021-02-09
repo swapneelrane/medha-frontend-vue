@@ -14,7 +14,7 @@
       </thead>
 
       <tbody>
-        <tr v-for="student in students" :key="student.id">
+        <tr v-for="(student, index) in students" :key="index">
           <td>{{ student.id }}</td>
           <td>{{ student.first_name }}</td>
           <td>{{ student.last_name }}</td>
