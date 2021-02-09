@@ -53,6 +53,11 @@ export default {
           title: "Students",
           icon: "mdi-account-group-outline",
           path: "/students"
+        },
+        {
+          title: "Search Students",
+          icon: "mdi-account-group-outline",
+          path: "/students-search"
         }
       ],
       mini: true
