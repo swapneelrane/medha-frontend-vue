@@ -1,47 +1,44 @@
 <template>
   <v-form ref="form" v-model="valid" lazy-validation>
-    <v-text-field
-      v-model="first_name"
-      :counter="10"
-      :rules="nameRules"
-      label="First Name"
-      required
-    ></v-text-field>
+    <v-layout row wrap>
+      <v-flex xs12 md4 mx-3>
+        <v-text-field
+          v-model="first_name"
+          :counter="10"
+          :rules="nameRules"
+          label="First Name"
+          required
+        ></v-text-field>
+      </v-flex>
 
-    <v-text-field
-      v-model="last_name"
-      :counter="10"
-      :rules="nameRules"
-      label="Last Name"
-      required
-    ></v-text-field>
+      <v-flex xs12 md4 mx-3>
+        <v-text-field
+          v-model="last_name"
+          :counter="10"
+          :rules="nameRules"
+          label="Last Name"
+          required
+        ></v-text-field>
+      </v-flex>
 
-    <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      required
-    ></v-text-field>
+      <v-spacer />
 
-    <v-text-field v-model="phone" label="Phone" required></v-text-field>
+      <v-flex xs12 md4 mx-3>
+        <v-text-field
+          v-model="email"
+          :rules="emailRules"
+          label="E-mail"
+          required
+        ></v-text-field>
+      </v-flex>
 
-    <v-select
-      v-model="select"
-      :items="items"
-      :rules="[v => !!v || 'Item is required']"
-      label="Item"
-      required
-    ></v-select>
-
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox>
+      <v-flex xs4 mx-3>
+        <v-text-field v-model="phone" label="Phone" required></v-text-field>
+      </v-flex>
+    </v-layout>
 
     <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
-      Validate
+      Submit
     </v-btn>
 
     <v-btn color="error" class="mr-4" @click="reset">
@@ -55,6 +52,22 @@
 </template>
 
 <script>
+import gql from "graphql-tag";
+
+const MUTATION = gql`
+  mutation CREATE_STUDENT($first_name: String, $last_name: String) {
+    createStudent(
+      input: { data: { first_name: $first_name, last_name: $last_name } }
+    ) {
+      student {
+        id
+        first_name
+        last_name
+      }
+    }
+  }
+`;
+
 export default {
   data: () => ({
     valid: true,
@@ -85,6 +98,13 @@ export default {
         phone: this.phone
       };
       console.log(student);
+
+      this.$apollo
+        .mutate({
+          mutation: MUTATION,
+          variables: student
+        })
+        .then(console.log("new student added"));
     },
     reset() {
       this.$refs.form.reset();
