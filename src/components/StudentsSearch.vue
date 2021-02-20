@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
 const query = gql`
   query getStudents {
@@ -36,22 +36,22 @@ const query = gql`
       created_at
     }
   }
-`;
+`
 
 export default {
   data() {
     return {
-      search: "",
+      search: '',
       headers: [
-        { text: "ID", value: "id" },
-        { text: "First Name", value: "first_name" },
-        { text: "Last Name", value: "last_name" },
-        { text: "Email", value: "email" },
-        { text: "Phone", value: "phone" },
+        { text: 'ID', value: 'id' },
+        { text: 'First Name', value: 'first_name' },
+        { text: 'Last Name', value: 'last_name' },
+        { text: 'Email', value: 'email' },
+        { text: 'Phone', value: 'phone' },
         // { text: "Updated At", value: "updated_at" },
-        { text: "Created At", value: "created_at" }
+        { text: 'Created At', value: 'created_at' }
       ]
-    };
+    }
   },
 
   apollo: {
@@ -59,7 +59,7 @@ export default {
       query
     }
   }
-};
+}
 
 // console.log(query);
 //console.log(this.$students);

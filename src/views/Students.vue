@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import StudentsAddEdit from "../components/StudentsAddEdit.vue";
+import StudentsAddEdit from '../components/StudentsAddEdit.vue'
 
 export default {
   components: {
     StudentsAddEdit
   }
-};
+}
 </script>

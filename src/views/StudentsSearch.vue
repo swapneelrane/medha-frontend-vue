@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import StudentsSearch from "../components/StudentsSearch.vue";
+import StudentsSearch from '../components/StudentsSearch.vue'
 
 export default {
   components: {
     StudentsSearch
   }
-};
+}
 </script>

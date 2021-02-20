@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
 const MUTATION = gql`
   mutation CREATE_STUDENT($first_name: String, $last_name: String) {
@@ -66,54 +66,54 @@ const MUTATION = gql`
       }
     }
   }
-`;
+`
 
 export default {
   data: () => ({
     valid: true,
-    first_name: "",
-    last_name: "",
+    first_name: '',
+    last_name: '',
     nameRules: [
-      v => !!v || "Name is required",
-      v => (v && v.length <= 10) || "Name must be less than 10 characters"
+      v => !!v || 'Name is required',
+      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
     ],
-    email: "",
+    email: '',
     emailRules: [
-      v => !!v || "E-mail is required",
-      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      v => !!v || 'E-mail is required',
+      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
-    phone: "",
+    phone: '',
     select: null,
-    items: ["Item 1", "Item 2", "Item 3", "Item 4"],
+    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
     checkbox: false
   }),
 
   methods: {
     validate() {
-      this.$refs.form.validate();
+      this.$refs.form.validate()
       const student = {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
         phone: this.phone
-      };
-      console.log(student);
+      }
+      console.log(student)
 
       this.$apollo
         .mutate({
           mutation: MUTATION,
           variables: student
         })
-        .then(console.log("new student added"));
+        .then(console.log('new student added'))
     },
     reset() {
-      this.$refs.form.reset();
+      this.$refs.form.reset()
     },
     resetValidation() {
-      this.$refs.form.resetValidation();
+      this.$refs.form.resetValidation()
     }
   }
-};
+}
 </script>
 
 <style></style>

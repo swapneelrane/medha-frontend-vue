@@ -24,13 +24,13 @@
 </template>
 
 <script>
-import NavigationDrawer from "@/components/NavigationDrawer";
+import NavigationDrawer from '@/components/NavigationDrawer'
 
 export default {
   components: {
     NavigationDrawer
   }
-};
+}
 </script>
 
 <style>

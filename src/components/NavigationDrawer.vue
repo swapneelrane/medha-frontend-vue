@@ -2,7 +2,7 @@
   <v-card>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant.sync="mini"
+      v-model:mini-variant="mini"
       app
       permanent
     >
@@ -48,22 +48,22 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "Home", icon: "mdi-home-city", path: "/" },
+        { title: 'Home', icon: 'mdi-home-city', path: '/' },
         {
-          title: "Students",
-          icon: "mdi-account-group-outline",
-          path: "/students"
+          title: 'Students',
+          icon: 'mdi-account-group-outline',
+          path: '/students'
         },
         {
-          title: "Search Students",
-          icon: "mdi-account-group-outline",
-          path: "/students-search"
+          title: 'Search Students',
+          icon: 'mdi-account-group-outline',
+          path: '/students-search'
         }
       ],
       mini: true
-    };
+    }
   }
-};
+}
 </script>
 
 <style></style>
